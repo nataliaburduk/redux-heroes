@@ -1,5 +1,8 @@
 import { addHero, handleNewHeroForm } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
+import { useCallback } from "react";
+import {useHttp} from '../../hooks/http.hook';
+
 import { v4 as uuidv4 } from 'uuid';
 
 // Задача для этого компонента:
@@ -16,6 +19,14 @@ const HeroesAddForm = () => {
 
     const { newHeroForm } = useSelector(state => state)
     const dispatch = useDispatch();
+    const {request} = useHttp();
+
+    const onAddHero = useCallback(() => {
+        const requestBody = {id: uuidv4(), ...newHeroForm};
+        request('http://localhost:3001/heroes', 'POST', JSON.stringify(requestBody))
+            .then(data => dispatch(addHero(requestBody)))
+            .catch(data => console.log(data))
+    }, [request, newHeroForm])
 
     const handleNameChange = (e) => {
         dispatch(handleNewHeroForm({ name: e.target.value}))
@@ -31,7 +42,7 @@ const HeroesAddForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addHero({id: uuidv4(), ...newHeroForm}))
+        onAddHero();
     }
 
     return (
