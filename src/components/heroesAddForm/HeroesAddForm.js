@@ -52,8 +52,8 @@ const HeroesAddForm = () => {
             <div className="mb-3">
                 <label htmlFor="name" className="form-label fs-4">Имя нового героя</label>
                 <input 
-                    onChange={handleNameChange}
                     required
+                    onChange={handleNameChange}
                     type="text" 
                     name="name" 
                     className="form-control" 
@@ -65,8 +65,8 @@ const HeroesAddForm = () => {
             <div className="mb-3">
                 <label htmlFor="text" className="form-label fs-4">Описание</label>
                 <textarea
-                    onChange={handleDescriptionChange}
                     required
+                    onChange={handleDescriptionChange}
                     name="text" 
                     className="form-control" 
                     id="text" 
@@ -79,12 +79,12 @@ const HeroesAddForm = () => {
                 <label htmlFor="element" className="form-label">Выбрать элемент героя</label>
                 <select 
                     onChange={handleElementChange}
-                    required
                     className="form-select" 
                     id="element" 
                     name="element"
-                    value={newHeroForm.element}>
-                    <option >Я владею элементом...</option>
+                    value={newHeroForm.element}
+                    required='required'>
+                    <option value=''>Я владею элементом...</option>
                     <option value="fire">Огонь</option>
                     <option value="water">Вода</option>
                     <option value="wind">Ветер</option>
