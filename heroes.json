@@ -1,64 +1,28 @@
 {
   "heroes": [
     {
-      "id": 2,
-      "name": "Неизвестный герой",
-      "description": "Скрывающийся в тени",
-      "element": "wind"
+      "id": "135deeb0-acdf-49c9-9d33-ba8272980c65",
+      "name": "Natalia",
+      "description": "kujbkl",
+      "element": "fire"
     },
     {
-      "id": 3,
-      "name": "Морской герой",
-      "description": "Как аквамен, но не из DC",
+      "id": "c919921e-6578-4a55-85d6-bf8e4846048f",
+      "name": "name",
+      "description": "jmbk,j",
       "element": "water"
     },
     {
-      "id": "04cb6639-e240-4779-9967-b527857bd230",
-      "name": "Gleb",
-      "description": "lihnl",
+      "id": "c10d885f-0de6-486e-b6be-28dc21f00632",
+      "name": "jkn .",
+      "description": "j b.j ",
+      "element": "wind"
+    },
+    {
+      "id": "6e466e7f-0694-49cf-8ba9-d61f76dff566",
+      "name": "Natalia",
+      "description": "jblkb",
       "element": "earth"
-    },
-    {
-      "id": "69497249-8e36-42ab-bb52-d354891fd6ce",
-      "name": "fire",
-      "description": "fire",
-      "element": "fire"
-    },
-    {
-      "id": "afa5e54a-6850-4aab-aa7d-911991c1fc22",
-      "name": "Natalia",
-      "description": "jgbj,h",
-      "element": "fire"
-    },
-    {
-      "id": "2cdde02c-2219-4009-91cd-11b594e46afd",
-      "name": "jkhnk.bnk n",
-      "description": "jn .knj ",
-      "element": ""
-    },
-    {
-      "id": "40beee75-5f75-44b3-8086-8eaf34c768f8",
-      "name": "Natalia",
-      "description": "m",
-      "element": ""
-    },
-    {
-      "id": "fab8e3fa-5777-4df0-a169-e5a1d6f7fb77",
-      "name": "gvkhgv",
-      "description": "jhbkj",
-      "element": ""
-    },
-    {
-      "id": "5f7a0b3a-3500-4623-bd0f-a59c1f58a785",
-      "name": "eeee",
-      "description": "ee",
-      "element": ""
-    },
-    {
-      "id": "04aebe41-19c2-47ed-9ed4-012032e22bd3",
-      "name": "d",
-      "description": "d",
-      "element": ""
     }
   ],
   "filters": [
