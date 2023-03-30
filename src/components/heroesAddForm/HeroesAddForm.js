@@ -1,4 +1,4 @@
-import { addHero, handleNewHeroForm } from "../../actions";
+import { addHero, handlenewHero } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useCallback } from "react";
 import {useHttp} from '../../hooks/http.hook';
@@ -17,27 +17,27 @@ import { v4 as uuidv4 } from 'uuid';
 
 const HeroesAddForm = () => {
 
-    const { newHeroForm } = useSelector(state => state)
+    const { newHero } = useSelector(state => state.heroes)
     const dispatch = useDispatch();
     const {request} = useHttp();
 
     const onAddHero = useCallback(() => {
-        const requestBody = {id: uuidv4(), ...newHeroForm};
+        const requestBody = {id: uuidv4(), ...newHero};
         request('http://localhost:3001/heroes', 'POST', JSON.stringify(requestBody))
             .then(data => dispatch(addHero(requestBody)))
             .catch(data => console.log(data))
-    }, [request, newHeroForm])
+    }, [request, newHero])
 
     const handleNameChange = (e) => {
-        dispatch(handleNewHeroForm({ name: e.target.value}))
+        dispatch(handlenewHero({ name: e.target.value}))
     }
 
     const handleDescriptionChange = (e) => {
-        dispatch(handleNewHeroForm({ description: e.target.value}))
+        dispatch(handlenewHero({ description: e.target.value}))
     }
 
     const handleElementChange = (e) => {
-        dispatch(handleNewHeroForm({ element: e.target.value}))
+        dispatch(handlenewHero({ element: e.target.value}))
     }
 
     const handleSubmit = (e) => {
@@ -59,7 +59,7 @@ const HeroesAddForm = () => {
                     className="form-control" 
                     id="name" 
                     placeholder="Как меня зовут?"
-                    value={newHeroForm.name}/>
+                    value={newHero.name}/>
             </div>
 
             <div className="mb-3">
@@ -72,7 +72,7 @@ const HeroesAddForm = () => {
                     id="text" 
                     placeholder="Что я умею?"
                     style={{"height": '130px'}}
-                    value={newHeroForm.description}/>
+                    value={newHero.description}/>
             </div>
 
             <div className="mb-3">
@@ -82,7 +82,7 @@ const HeroesAddForm = () => {
                     className="form-select" 
                     id="element" 
                     name="element"
-                    value={newHeroForm.element}
+                    value={newHero.element}
                     required='required'>
                     <option value=''>Я владею элементом...</option>
                     <option value="fire">Огонь</option>

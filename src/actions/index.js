@@ -31,7 +31,7 @@ export const addHero = (newHero) => {
     }
 }
 
-export const handleNewHeroForm = (payload) => {
+export const handlenewHero = (payload) => {
     return {
         type: 'HANDLE_NEW_HERO_FORM',
         payload: payload

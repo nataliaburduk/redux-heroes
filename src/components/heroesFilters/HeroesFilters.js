@@ -29,7 +29,7 @@ const FILTER_LABEL_MAPPING = {
 }
 
 const HeroesFilters = () => {
-    const {filters, activeFilter, filtersLoadingStatus} = useSelector(state => state);
+    const {filters, activeFilter, filtersLoadingStatus} = useSelector(state => state.filters);
     const dispatch = useDispatch();
     const {request} = useHttp();
 
