@@ -34,12 +34,14 @@ const reducer = (state = initialState, action) => {
         case 'DELETE_HERO':
             return {
                 ...state,
-                heroes: state.heroes.filter(hero => hero.id !== action.payload)
+                heroes: state.heroes.filter(hero => hero.id !== action.payload),
+                filteredHeroes: state.heroes.filter(hero => hero.id !== action.payload)
             }
         case 'ADD_HERO':
             return {
                 ...state,
                 heroes: [...state.heroes, action.payload],
+                filteredHeroes: [...state.heroes, action.payload],
                 newHeroForm: {name: '', description: '', element: ''}
             }
         case 'HANDLE_NEW_HERO_FORM':
