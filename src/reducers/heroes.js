@@ -48,25 +48,3 @@ const heroes = (state = initialState, action) => {
 }
 
 export default heroes;
-
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-const App = () => {
-    return (
-        <Router>
-        <div className="app">
-            <AppHeader/>
-            <main>
-                <Switch>
-                    <Route exact path='/'>
-                        <MainPage/>
-                    </Route>
-                    <Route exact path='/comics'>
-                        <ComicPage/>
-                    </Route>
-                </Switch>
-            </main>
-        </div>
-        </Router>
-    )
-}
